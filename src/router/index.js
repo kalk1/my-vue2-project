@@ -8,7 +8,7 @@ import SnakeGame from '@/components/SnakeGame.vue'
 import ChartTest from '@/views/chartTestView.vue'
 import BoxPlot from '@/views/BoxPlotView.vue'
 import KLineAdvanced from '@/views/KLineAdvancedView.vue'
-// import NormalChart from '@/views/NormalChart.vue'
+import NormalChart from '@/views/NormalChart.vue'
 
 const routes = [
   {
@@ -44,9 +44,9 @@ const routes = [
   {
     path: '/normal-chart',
     name: 'NormalChart',
-    // component: NormalChart,
+    component: NormalChart,
     meta: { title: '正态分布' },
-    component: () => import('@/views/NormalChart.vue'),
+    // component: () => import('@/views/NormalChart.vue'),
 
   }
 ]

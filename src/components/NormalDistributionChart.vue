@@ -272,8 +272,8 @@ export default {
 
 /* 【新增】主图表样式 */
 .main-chart {
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  height: 300px;
 }
 
 /* 【新增】缩略图样式 */
