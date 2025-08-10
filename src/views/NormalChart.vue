@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <NormalDistributionChart />
+  <!-- 给容器一个class，方便添加样式 -->
+  <div class="chart-page-container">
+    <NormalDistributionChart></NormalDistributionChart>
   </div>
 </template>
 
 <script>
-// 导入我们刚刚创建的图表组件
 import NormalDistributionChart from "@/components/NormalDistributionChart.vue";
-
 export default {
   components: {
     NormalDistributionChart,
@@ -15,13 +14,11 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+/* 新增样式 */
+.chart-page-container {
   padding: 20px;
+  /* 设置一个高度，确保图表容器不会塌陷 */
+  height: 600px;
 }
 </style>
