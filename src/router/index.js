@@ -9,6 +9,8 @@ import ChartTest from '@/views/chartTestView.vue'
 import BoxPlot from '@/views/BoxPlotView.vue'
 import KLineAdvanced from '@/views/KLineAdvancedView.vue'
 import NormalChart from '@/views/NormalChart.vue'
+import ProcessCapability from '@/views/ProcessCapabilityView.vue'
+import ProcessCapabilityDashboard from '@/views/ProcessCapabilityDashboard.vue'
 
 const routes = [
   {
@@ -48,6 +50,18 @@ const routes = [
     meta: { title: '正态分布' },
     // component: () => import('@/views/NormalChart.vue'),
 
+  },
+  {
+    path: '/process-capability',
+    name: 'process-capability',
+    component: ProcessCapability,
+    meta: { title: '过程能力分析报告' }
+  },
+  {
+    path: '/process-capability-dashboard',
+    name: 'process-capability-dashboard',
+    component: ProcessCapabilityDashboard,
+    meta: { title: '过程能力分析仪表板' }
   }
 ]
 

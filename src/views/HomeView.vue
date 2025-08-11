@@ -35,6 +35,19 @@
         <p>专业的股票K线图表，包含移动平均线和完整的技术指标</p>
         <button class="feature-btn">查看图表</button>
       </div>
+
+      <div class="feature-card" @click="goToProcessCapability">
+        <div class="feature-icon">📊</div>
+        <h3>过程能力分析</h3>
+        <p>专业的统计过程控制分析，包含正态分布图表和过程能力指数</p>
+        <button class="feature-btn">查看分析</button>
+      </div>
+      <div class="feature-card" @click="goToProcessCapabilityDashboard">
+        <div class="feature-icon">📈</div>
+        <h3>过程能力仪表板</h3>
+        <p>多维度过程能力分析仪表板，支持多产品对比分析</p>
+        <button class="feature-btn">查看仪表板</button>
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +69,12 @@ export default {
   methods: {
     goToKLineAdvanced() {
       this.$router.push("/kline-advanced");
+    },
+    goToProcessCapability() {
+      this.$router.push("/process-capability");
+    },
+    goToProcessCapabilityDashboard() {
+      this.$router.push("/process-capability-dashboard");
     },
 
     generateNormalDistributionOption() {
