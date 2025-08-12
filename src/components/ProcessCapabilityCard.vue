@@ -1,14 +1,11 @@
 <template>
   <div class="process-capability-card">
     <div class="chart-header">
-      <h2>{{ title }}</h2>
+      <!-- <h2>{{ title }}</h2> -->
     </div>
 
     <div class="charts-wrapper">
       <div class="combined-chart">
-        <!-- 图表容器 -->
-        <div :ref="chartRef" class="chart-container"></div>
-
         <!-- 左侧统计面板 -->
         <div class="stats-section left-stats">
           <h3>组内能力指数</h3>
@@ -39,6 +36,9 @@
             </div>
           </div>
         </div>
+
+        <!-- 图表容器 -->
+        <div :ref="chartRef" class="chart-container"></div>
 
         <!-- 右侧统计面板 -->
         <div class="stats-section right-stats">
@@ -285,19 +285,21 @@ export default {
               },
               {
                 // 主图网格 - 中间，为左右统计面板留出空间
-                left: "20%",
+                left: "18%",
                 top: "15%",
-                width: "80%",
-                height: "50%",
+                right: "20%",
+                width: "65%",
+                height: "80%",
               },
             ]
           : [
               {
                 // 主图网格 - 居中显示，不显示缩略图
-                left: "10%",
+                left: "18%",
                 top: "15%",
-                width: "80%",
-                height: "70%",
+                right: "20%",
+                width: "65%",
+                height: "80%",
               },
             ],
         xAxis: this.showThumbnail
@@ -349,7 +351,6 @@ export default {
                 // 主图Y轴
                 type: "value",
                 gridIndex: 1,
-                name: "频次",
                 nameLocation: "middle",
                 nameGap: 35,
                 axisLabel: { fontSize: 10 },
@@ -360,7 +361,6 @@ export default {
                 // 主图Y轴（不显示缩略图时）
                 type: "value",
                 gridIndex: 0,
-                name: "频次",
                 nameLocation: "middle",
                 nameGap: 35,
                 axisLabel: { fontSize: 10 },
@@ -643,11 +643,11 @@ export default {
 
 <style scoped>
 .process-capability-card {
-  background: white;
+  background: #f5f5f5;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
   padding: 15px;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
 }
@@ -676,28 +676,27 @@ export default {
 
 .chart-container {
   width: 100%;
-  height: 400px;
+  height: 200px;
 }
 
 .stats-section {
   position: absolute;
-  top: 50%;
+  top: 25%;
   transform: translateY(-50%);
-  background: white;
   border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  min-width: 150px;
-  max-width: 170px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 120px;
   z-index: 10;
+  scale: 0.6;
 }
 
 .left-stats {
-  left: -180px;
+  left: 0px;
 }
 
 .right-stats {
-  right: -180px;
+  right: 0px;
 }
 
 .stats-section h3 {
@@ -707,23 +706,15 @@ export default {
   text-align: center;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
 .stat-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 8px;
-  background-color: #f8f9fa;
+  padding: 2px 4px;
   border-radius: 3px;
 }
 
 .stat-label {
-  font-weight: bold;
   color: #555;
   font-size: 12px;
 }
